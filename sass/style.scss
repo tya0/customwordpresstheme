@@ -51,7 +51,7 @@ a {
 
 .content {
 	float: left;
-	width: 70%;
+	width: 65%;
 	margin-right: 5%;
 }
 
@@ -68,9 +68,39 @@ header {
 	}
 }
 
+////// HOME PAGE STYLING
+
 .main .container {
 	padding: 3% 0;
+	.latest-post {
+		width: 70%;
+		margin: 0 auto;
+		article {
+			position: relative;
+			.blog-content {
+				text-align: center;
+				position: absolute;
+				top: 85px;
+				left: calc(50% - 185px);
+				top: calc(50% - 60px);
+	    		h2 {
+	    			font-size: 40px;
+	    			color: white;
+	    			text-transform: uppercase;
+	    		}
+	    		h3 {
+	    			background: $green;
+	    			width: 35%;
+	    			padding-top: 1%;
+	    			margin: 0 auto;
+	    			color: white;
+	    		}
+			}					
+		}
+	}
 }
+
+////// BLOG PAGE STYLING
 
 .content-all-posts .content{
 	article {
@@ -100,6 +130,41 @@ header {
 			a {
 				@include fontSizer(14);
 			}
+		}
+	}
+}
+
+////// SIDEBAR STYLING 
+#text-2 {
+	text-align: center;
+	img {
+		border-radius: 100%;
+	}
+}
+
+.recent-posts {
+	margin: 20px 0;
+}
+
+.sidebar .recent-posts article {
+	margin-bottom: 10px;
+	img {
+		width: 30%;
+		float: left
+	}
+	.blog-content {
+		width: calc(70% - 3px);
+		float: left;
+		margin-left: 3px;
+		padding: 10px;
+		h2 {
+			@include fontSizer(14);
+			margin: 0;
+		}
+		h3 {
+			@include fontSizer(13);
+			margin: 0;
+			margin-bottom: 10px;
 		}
 	}
 }
