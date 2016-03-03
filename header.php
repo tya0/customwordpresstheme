@@ -8,6 +8,8 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   <!-- stylesheets should be enqueued in functions.php -->
   <?php wp_head(); ?>
+  <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  
 </head>
 
 
@@ -15,16 +17,21 @@
 
 <header>
   <div class="container">
-    <h1>
+    <nav class="clearfix">
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'primary'
+      )); ?>
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'social-media-header'
+      )); ?>
+    </nav>
+    <div class="main-heading"
       <a href="<?php echo home_url( '/' ); ?>" title="<?php bloginfo( 'name', 'display' ); ?>" rel="home">
-        <?php bloginfo( 'name' ); ?>
+        <h1><?php bloginfo( 'name' ); ?></h1>
       </a>
-    </h1>
-
-    <?php wp_nav_menu( array(
-      'container' => false,
-      'theme_location' => 'primary'
-    )); ?>
+    </div>
   </div> <!-- /.container -->
 </header><!--/.header-->
 

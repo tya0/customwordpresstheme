@@ -1,14 +1,42 @@
+nav {
+	padding: 2% 0;
+}
+
 ul.menu {
 	margin: 0;
 	padding: 0;
+	width: 60%;
 	li {
 		display: inline;
 		margin-right: 10px;
 		a {
-			color: #333;
-			padding: 10px;
-			background: #333;
-			color: white;
+			padding: 1%;
+			margin-right: 2%;
+			color: #6A6A6A;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			&:hover {
+				color: $green;
+			}
 		}
 	}
+}
+
+#menu-main-menu {
+	float: left;
+}
+
+#menu-social-media-header-navigation {
+	width: 20%;
+	float: right;
+	text-align: right;
+	li {
+		margin-right: 0;
+		margin-left: 3%;
+	}
+}
+
+#menu-social-media-footer-navigation {
+	width: 100%;
+
 }

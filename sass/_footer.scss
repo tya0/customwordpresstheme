@@ -1,3 +1,24 @@
 footer {
 	clear: both;
+	text-align: center;
+	.container {
+		background: $footerBg;
+	}
+	.menu {
+		width: 100%;
+		li a {
+			color: $whiteFont;
+			.fa-instagram, .fa-twitter, .fa-pinterest, .fa-facebook, .fa-google-plus {
+				color: $footerBg;
+			}
+		}
+	}
+
+	#menu-social-media-footer-navigation, #menu-main-menu-1 {
+		padding: 3% 0;
+	}
+
+	#menu-social-media-footer-navigation {
+		border-bottom: 1px solid grey;
+	}
 }

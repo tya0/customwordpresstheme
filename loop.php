@@ -16,26 +16,25 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<h2 class="entry-title">
-        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
-          <?php the_title(); ?>
-        </a>
-      </h2>
-
-			<section class="entry-content">
-				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
-				<?php wp_link_pages( array(
-          'before' => '<div class="page-link"> Pages:',
-          'after' => '</div>'
-        )); ?>
-			</section><!-- .entry-content -->
-
-			<footer>
-				<p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>
-        <p><?php comments_popup_link('Respond to this post &raquo;', '1 Response &raquo;', '% Responses &raquo;'); ?></p>
-        <p><?php edit_post_link( 'Edit', '<span class="edit-link">', '</span>' ); ?></p>
-			</footer>
+	<article id=" clearfix post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		
+      	
+       	<img src="<?php echo hackeryou_get_thumbnail_url( $post ); ?>" alt="">
+      	<div class="blog-content">
+      		<h3>
+      		<?php the_time('d-m-Y'); ?> 
+	      	</h3>
+	        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+	          <h2 class="entry-title"><?php the_title(); ?></h2>
+	       	</a>
+			<?php the_excerpt(); ?>
+      	</div>
+	
+		<footer>
+				<!-- <p><?php the_tags('Tags: ', ', ', '<br>'); ?> Posted in <?php the_category(', '); ?></p>-->
+       
+        
+			</footer> 
 
 		</article><!-- #post-## -->
 
@@ -49,3 +48,6 @@
   <p class="alignleft"><?php next_posts_link('&laquo; Older Entries'); ?></p>
   <p class="alignright"><?php previous_posts_link('Newer Entries &raquo;'); ?></p>
 <?php endif; ?>
+
+
+<?php $my_query = new WP_Query('category_name=mycategory&showposts=1'); ?><?php while ($my_query->have_posts()) : $my_query->the_post(); ?><a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a><?php endwhile; ?>
