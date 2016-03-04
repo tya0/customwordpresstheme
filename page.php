@@ -27,7 +27,7 @@
         <?php } 
         wp_reset_postdata();?>
 
-    </div>
+    </div> 
 
     <div class="content">
       <?php // Start the loop ?>

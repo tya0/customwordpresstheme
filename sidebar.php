@@ -2,7 +2,7 @@
 	<ul class="wrapper">
 		<?php  dynamic_sidebar( 'primary-widget-area' ); ?>
 		<li class="tag-cloud">
-			<h3>TAG CLOUD</h3>
+			<h3>Popular Tags</h3>
 			<ul>
 				<?php wp_tag_cloud('smallest=12&largest=10&number=8&'); ?>
 			</ul>
@@ -34,6 +34,9 @@
 		    wp_reset_postdata();?>
 
 		</div>
+
+		<?php echo do_shortcode('[instagram-feed headercolor=#33464A]'); ?>
+
 		<div class="subscribe">
 			<div class="wrapper">
 				<h3>Subscribe</h3>

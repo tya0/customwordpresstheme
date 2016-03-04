@@ -24,7 +24,8 @@ function theme_setup() {
 	register_nav_menus( array(
 		'primary' => 'Primary Navigation',
 		'social-media-header' => 'Social Media Header Navigation',
-		'social-media-footer' => 'Social Media Footer Navigation'
+		'social-media-footer' => 'Social Media Footer Navigation',
+		'social-media-single-post' => 'Social Media Single Blog Post'
 	) );
 
 	/*
@@ -231,12 +232,11 @@ function hackeryou_posted_in() {
 	// Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', ', ' );
 	if ( $tag_list ) {
-		$posted_in = 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.';
+		$posted_in = 'This entry was posted in %1$s and tagged %2$s.';
 	} elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-		$posted_in = 'This entry was posted in %1$s. Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.';
-	} else {
-		$posted_in = 'Bookmark the <a href="%3$s" title="Permalink to %4$s" rel="bookmark">permalink</a>.';
-	}
+		$posted_in = 'This entry was posted in %1$s.';
+	} 
+
 	// Prints the string, replacing the placeholders.
 	printf(
 		$posted_in,

@@ -2,6 +2,8 @@
 	width: 30%;
 	float: left;
 	padding: 1%;
+	margin-top: 3%;
+
 	ul {
 		margin: 0;
 		padding: 0;
@@ -13,6 +15,7 @@
 		text-transform: uppercase;
 		margin-bottom: 8%;
 		text-align:center;
+		@include fontSizer(14);
 	}
 	h4 {
 		text-align: center;
@@ -27,6 +30,13 @@
 	text-align: center;
 	img {
 		border-radius: 100%;	
+	}
+}
+
+.cat-item a {
+	color: $text;
+	&:hover {
+		color: $green;
 	}
 }
 
@@ -64,7 +74,7 @@
 		margin-left: 3px;
 		padding: 10px;
 		.entry-title {
-			@include fontSizer(14);
+			@include fontSizer(13);
 			margin: 0;
 			color: $text;
 			text-transform: uppercase;
@@ -92,5 +102,11 @@
 		position: relative;
 		bottom: 34px;
 		left: 13px;
+	}
+}
+
+.sbi_photo {
+	img {
+		border-radius: 0;
 	}
 }

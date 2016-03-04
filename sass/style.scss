@@ -44,7 +44,7 @@ a {
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 1080px;
 	width: 100%;
 	margin: 0 auto;
 }
@@ -52,7 +52,7 @@ a {
 .content {
 	float: left;
 	width: 65%;
-	margin-right: 5%;
+	margin: 3% 4% 3% 1%;
 }
 
 .full {
@@ -80,17 +80,20 @@ header {
 			.blog-content {
 				text-align: center;
 				position: absolute;
-				top: 85px;
-				left: calc(50% - 185px);
+				width: 100%;
+
 				top: calc(50% - 60px);
 	    		h2 {
 	    			font-size: 40px;
 	    			color: white;
 	    			text-transform: uppercase;
+	    			&:hover {
+	    				color: $green;
+	    			}
 	    		}
 	    		h3 {
 	    			background: $green;
-	    			width: 35%;
+	    			width: 17%;
 	    			padding-top: 1%;
 	    			margin: 0 auto;
 	    			color: white;
@@ -112,13 +115,16 @@ header {
 			}
 		}
 		img, .blog-content {
-			width: 50%;
 			float: left;
 		}
+		img {
+			width: 40%;
+		}
 		.blog-content {
+			width: 60%;
 			padding: 0 2% 2% 2%;
 			h2 {
-				@include fontSizer(20);
+				@include fontSizer(18);
 				text-transform: uppercase;
 				color: #33464A;
 				&:hover {
@@ -126,15 +132,81 @@ header {
 				}
 			}
 			h3 {
-				@include fontSizer(16);
+				@include fontSizer(14);
 				color: $green;
 			}
 			p {
-				line-height: 22px;
+				line-height: 20px;
 			}
 			a {
 				@include fontSizer(14);
 			}
 		}
 	}
+}
+
+////// SINGLE POST STYLING
+
+.entry-content {
+	line-height: 20px;
+    letter-spacing: 1px;
+}
+
+.entry-utility {
+    margin: 6% 0;
+}
+
+blockquote {
+    border-left: 5px solid $green;
+    padding: 2px 0 2px 30px;
+}
+//tags
+.entry-utility {
+    text-align: center;
+    a {
+    	color: $green;
+    	&:hover {
+    		color: $text;
+    	}
+    }
+}
+
+#nav-below {
+	.nav-previous, .nav-next {
+	width: 50%;
+	float: left;
+	}	
+
+	.nav-next{
+		text-align: right;
+	}
+
+	.nav-previous {
+		text-align: left;
+	}
+}
+
+#menu-social-media-single-post {
+	text-align:center;
+	width: 40%;
+	margin: 0 auto;	
+	&:before {
+		content: '';
+		background-color: black;
+		height: 3px;
+		width: 20%;
+	}
+	.fa-pinterest, .fa-twitter, .fa-facebook {
+		color: white;
+		&:hover {
+			color: $text;
+		}
+	}
+	i.fa.fa-circle {
+	    color: $green;
+	}
+}
+
+.comment-list li{
+	list-style-type: none;
 }
