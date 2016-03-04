@@ -1,11 +1,96 @@
 .sidebar {
 	width: 30%;
 	float: left;
+	padding: 1%;
 	ul {
 		margin: 0;
 		padding: 0;
 		li {
 			list-style: none;
 		}
+	}
+	h3 {
+		text-transform: uppercase;
+		margin-bottom: 8%;
+		text-align:center;
+	}
+	h4 {
+		text-align: center;
+	}
+}
+
+
+.wrapper > li {
+	margin-bottom: 15%;
+}
+#text-2 {
+	text-align: center;
+	img {
+		border-radius: 100%;	
+	}
+}
+
+
+//tag cloud styling
+.tag-cloud a {
+	color: $text;
+    padding: 4px 6px;
+    border: 1px solid black;
+    line-height: 35px;
+    margin-right: 3px;
+    &:hover {
+    	color: $green;
+    	border: 1px solid $green;
+    }
+}
+
+//recent post styling
+.recent-posts {
+	margin-bottom: 15%;
+	h3{
+		text-transform: uppercase;
+	}
+}
+
+.sidebar .recent-posts article {
+	margin-bottom: 10px;
+	img {
+		width: 30%;
+		float: left
+	}
+	.blog-content {
+		width: calc(70% - 3px);
+		float: left;
+		margin-left: 3px;
+		padding: 10px;
+		.entry-title {
+			@include fontSizer(14);
+			margin: 0;
+			color: $text;
+			text-transform: uppercase;
+			font-weight: 700;
+			&:hover {
+				color: $green;
+			}
+		}
+		.date {
+			@include fontSizer(13);
+			margin: 0;
+			margin-bottom: 3%;
+			color: $green;
+		}
+	}
+}
+
+.subscribe {
+	.email {
+		width: 100%;
+		padding: 15px 5px 15px 35px;
+
+	}
+	i.fa.fa-envelope-o {
+		position: relative;
+		bottom: 34px;
+		left: 13px;
 	}
 }

@@ -3,7 +3,7 @@
 <div class="main">
   <div class="container">
 
-    <div class="latest-post ">
+    <div class="latest-post">
       <?php
 
         $args = array( 'posts_per_page' => 1 );
