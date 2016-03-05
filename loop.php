@@ -21,7 +21,7 @@
       	
        	<img src="<?php echo hackeryou_get_thumbnail_url( $post ); ?>" alt="">
       	<div class="blog-content">
-      		<h3>
+      		<h3 class="blog-page-date">
       		<?php the_time('d-m-Y'); ?> 
 	      	</h3>
 	        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">

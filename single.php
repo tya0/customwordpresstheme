@@ -7,9 +7,15 @@
 
         <div id="post-<?php $articleID = the_ID(); ?>" <?php post_class(); ?> >
 
-          <?php $postCategory = get_the_category( $articleID ); ?>
-
+          <h3><?php the_time('d-m-Y'); ?> </h3>
           <h1 class="entry-title"><?php the_title(); ?></h1>
+          
+          <?php 
+          $categories_list = get_the_category_list();
+          echo $categories_list;
+           ?>
+
+          <img src="<?php echo hackeryou_get_thumbnail_url( $post ); ?>" alt="">
 
           <div class="entry-meta">
             <?php //hackeryou_posted_on(); ?>
@@ -45,15 +51,25 @@
          
          <?php
 
-         $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 5, 'post__not_in' => array($post->ID) ) );
+         $related = get_posts( array( 'category__in' => wp_get_post_categories($post->ID), 'numberposts' => 1, 'post__not_in' => array($post->ID) ) );
 
          if( $related ) foreach( $related as $post ) {
+          echo '<p class="title"> Related Post </p>';
          setup_postdata($post); ?>
 
-          <div>
-              <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-         </div>
-         
+           <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>             
+                 
+             <img src="<?php echo hackeryou_get_thumbnail_url( $post ); ?>" alt="">
+             <div class="blog-content">
+               <p class="date">
+               <?php the_time('d-m-Y'); ?> 
+               </p>
+               <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
+                 <p class="entry-title"><?php the_title(); ?></p>
+               </a>
+             </div>
+           </article>
+
          <?php }
 
          wp_reset_postdata(); ?>

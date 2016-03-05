@@ -53,6 +53,10 @@ a {
 	float: left;
 	width: 65%;
 	margin: 3% 4% 3% 1%;
+	p {
+		line-height: 22px;
+		letter-spacing: 1px;
+	}
 }
 
 .full {
@@ -123,13 +127,12 @@ header {
 		.blog-content {
 			width: 60%;
 			padding: 0 2% 2% 2%;
-			h2 {
+			text-align: left;
+			.blog-page-date {
 				@include fontSizer(18);
 				text-transform: uppercase;
-				color: #33464A;
-				&:hover {
-					color: $green;
-				}
+				color: white;
+				margin: 0;
 			}
 			h3 {
 				@include fontSizer(14);
@@ -146,9 +149,37 @@ header {
 }
 
 ////// SINGLE POST STYLING
-
+.content .post {
+	h3, h1 {
+		text-align: center;
+	}
+	h3 {
+		background: $green;
+		width: 130px;
+		padding-top: 1%;
+		margin: 0 auto;
+		color: white;
+	}
+	img {
+		//margin: 6% 0;
+	}
+	.post-categories {
+		margin: 0 0 5% 0;
+		padding: 0; 
+		text-align: center;
+		li {
+			list-style-type: none;
+			display: inline-block;
+			a {
+				color: $green;
+				font-weight: 700;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
 .entry-content {
-	line-height: 20px;
+	line-height: 22px;
     letter-spacing: 1px;
 }
 
@@ -172,11 +203,17 @@ blockquote {
 }
 
 #nav-below {
+	margin-bottom: 18%;
 	.nav-previous, .nav-next {
-	width: 50%;
-	float: left;
-	}	
-
+		width: 50%;
+		float: left;
+		a {
+			color: $text;
+			&:hover {
+				color: $green;
+			}
+		}
+	}
 	.nav-next{
 		text-align: right;
 	}
@@ -189,7 +226,7 @@ blockquote {
 #menu-social-media-single-post {
 	text-align:center;
 	width: 40%;
-	margin: 0 auto;	
+	margin: 0 auto 3% auto;
 	&:before {
 		content: '';
 		background-color: black;
@@ -207,6 +244,65 @@ blockquote {
 	}
 }
 
-.comment-list li{
-	list-style-type: none;
+.related-post {
+	text-align: center;
+	.title {
+		text-align: center;
+		font-weight: 700;
+		@include fontSizer(22);
+	}
+	article {
+		width: 50%;
+		position: relative;
+		margin: 0 auto;
+		display: inline-block;
+		.blog-content {
+			position: absolute;
+			top: 20%;
+			text-align: center;
+			width: 100%;
+			.date {
+				background: $green;
+				color: white;
+				padding: 2%;
+				width: 110px;
+				margin: 0 auto;
+			}
+			a {
+				color: white;
+				font-weight: 700;
+				@include fontSizer(20);
+			}
+		}
+	}
+}
+
+//// contact form
+
+.wpcf7-form {
+
+	input[type=text], input[type=email], textarea {
+		width: 75%;
+		padding: 1%;
+		border-top: none;
+		border-left: 1px solid #e0e0e0;
+		border-bottom: 1px solid #e0e0e0;
+		border-right: none;
+		margin-top:3px;
+
+	}
+	input[type=text]:focus {
+		border: 2px solid $green;
+	}
+	input[type=submit] {
+		color: $text;
+		border: 1px solid $text;
+		padding: 2% 6%;
+		background: $green;
+		&:hover {
+			color: $green;
+			border: 1px solid $green;
+			background: white;
+		}
+	}
 }
