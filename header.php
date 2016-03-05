@@ -17,6 +17,7 @@
 
 <header>
   <div class="container">
+  	<i class="fa fa-bars fa-2x hamburger"></i>
     <nav class="clearfix">
       <?php wp_nav_menu( array(
         'container' => false,

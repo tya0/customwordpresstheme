@@ -9,7 +9,7 @@
       'container' => false,
       'theme_location' => 'primary'
     )); ?>
-    <p>&copy; HackerYou <?php echo date('Y'); ?></p>
+    <p>&copy; Francoise <?php echo date('Y'); ?></p>
   </div>
 </footer>
 
