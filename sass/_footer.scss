@@ -1,3 +1,7 @@
+#menu-social-footer-icons {
+	display: none;
+}
+
 footer {
 	clear: both;
 	text-align: center;
@@ -14,17 +18,27 @@ footer {
 		}
 	}
 
-	#menu-social-media-footer-navigation, #menu-main-menu-1 {
+	#menu-social-media-footer-navigation, #menu-social-footer-icons, #menu-main-menu-1 {
 		padding: 3% 0;
 	}
 
-	#menu-social-media-footer-navigation {
+	#menu-social-media-footer-navigation, #menu-social-footer-icons {
 		border-bottom: 1px solid grey;
+		width: 100%;
 	}
 }
 
 @media only screen and (max-width: 940px) {
 	#menu-social-media-footer-navigation li a {
 		@include fontSizer(12);
+	}
+}
+
+@media only screen and (max-width: 730px) {
+	#menu-social-media-footer-navigation {
+		display: none;
+	}
+	#menu-social-footer-icons {
+		display: block;
 	}
 }

@@ -1,6 +1,9 @@
 <footer>
   <div class="container">
-
+      <?php wp_nav_menu( array(
+        'container' => false,
+        'theme_location' => 'social-footer-icons',
+      )); ?>
   	<?php wp_nav_menu( array(
     	'container' => false,
     	'theme_location' => 'social-media-footer',

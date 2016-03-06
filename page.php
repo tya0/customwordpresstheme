@@ -3,17 +3,17 @@
 <div class="main">
   <div class="container">
 
-    <div class="latest-post">
+    <div class="latest-post ">
       <?php
 
-        $args = array( 'posts_per_page' => 1 );
+        $args = array( 'posts_per_page' => 3 );
 
         $myposts = new WP_Query( $args );
         while($myposts->have_posts()) {
            $myposts->the_post() ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>             
                   
-              <img src="<?php echo hackeryou_get_thumbnail_url( $post ); ?>" alt="">
+              <img src="<?php echo hackeryou_get_thumbnail_url( $post ); ?>" alt=""/>
               <div class="blog-content">
                 <h3>
                 <?php the_time('d-m-Y'); ?> 
@@ -26,7 +26,6 @@
 
         <?php } 
         wp_reset_postdata();?>
-
     </div> 
 
     <div class="content">

@@ -67,6 +67,9 @@ h3 {
 .comment-meta {
 	font-size: 12px;
 	margin: 0 0 5px;
+	.comment-metadata {
+    	text-align: left;
+	}
 	a {
 		&:link, &:visited {
 			color: $text;
@@ -118,13 +121,14 @@ a.comment-edit-link {
 
 input[type=submit] {
 	padding: 1%;
-	background: none;
+	background: $green;
 	border: 1px solid $text;
 	color: $text;
 	margin-top: 2%;
 	&:hover {
 		color: $green;
 		border: 1px solid $green;
+		background: none;
 	}
 }
 

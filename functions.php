@@ -25,7 +25,8 @@ function theme_setup() {
 		'primary' => 'Primary Navigation',
 		'social-media-header' => 'Social Media Header Navigation',
 		'social-media-footer' => 'Social Media Footer Navigation',
-		'social-media-single-post' => 'Social Media Single Blog Post'
+		'social-media-single-post' => 'Social Media Single Blog Post',
+		'social-footer-icons' => 'Sociial Footer Icons'
 	) );
 
 	/*
@@ -49,8 +50,6 @@ function hackeryou_styles(){
 	wp_enqueue_style('style', get_stylesheet_uri() );
 
 	wp_enqueue_style('fontawesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css');
-
-	wp_enqueue_style('flickity', '<link rel="stylesheet" href="https://npmcdn.com/flickity@1.1/dist/flickity.min.css">');
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_styles');
@@ -86,14 +85,16 @@ function hackeryou_scripts() {
     true //load in footer
   );
 
+  wp_enqueue_script(
+    'flickity', //handle
+    get_template_directory_uri() . '/js/flickity.pkgd.js', //source
+    false, //dependencies
+    null, // version number
+    true //load in footer
+  );
 
-	wp_enqueue_script(
-		'flickity',
-		"http" . ($_SERVER['SERVER_PORT'] == 443 ? "s" : "") . "://npmcdn.com/flickity@1.1/dist/flickity.pkgd.min.js",
-		array( 'jquery' ), //dependencies
-		null, //version number
-		true //load in footer
-	);
+
+
 }
 
 add_action( 'wp_enqueue_scripts', 'hackeryou_scripts');
